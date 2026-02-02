@@ -1,11 +1,14 @@
-﻿const arena = document.getElementById("arena");
+const arena = document.getElementById("arena");
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 const msg = document.getElementById("msg");
-
+const gifWrap = document.getElementById("gifWrap");
 
 
 yesBtn.addEventListener("click", () => {
+    yesBtn.disabled = true;
+    noBtn.style.display = "none";
+
     msg.textContent = "DATE INCOMING, stay tuned, I Looove you 💖💖💖";
 
     const r = yesBtn.getBoundingClientRect();
@@ -18,6 +21,9 @@ yesBtn.addEventListener("click", () => {
         startVelocity: 50,
         origin: { x, y }
     });
+    gifWrap.style.display = "block";
+    // optional: scroll to GIF on mobile
+    gifWrap.scrollIntoView({ behavior: "smooth", block: "center" });
 
     setTimeout(() => {
         confetti({
@@ -95,5 +101,4 @@ noBtn.addEventListener("mouseenter", moveNoRandom);
 noBtn.addEventListener("touchstart", (e) => {
     moveNoRandom();
     e.preventDefault();
-
 }, { passive: false });
