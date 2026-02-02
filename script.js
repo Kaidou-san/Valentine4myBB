@@ -6,7 +6,7 @@ const msg = document.getElementById("msg");
 
 
 yesBtn.addEventListener("click", () => {
-    msg.textContent = "My BB said YESSS LFGOO 💖💖💖";
+    msg.textContent = "DATE INCOMING, stay tuned, I Looove you 💖💖💖";
 
     const r = yesBtn.getBoundingClientRect();
     const x = (r.left + r.width / 2) / window.innerWidth;
@@ -95,4 +95,5 @@ noBtn.addEventListener("mouseenter", moveNoRandom);
 noBtn.addEventListener("touchstart", (e) => {
     moveNoRandom();
     e.preventDefault();
+
 }, { passive: false });
